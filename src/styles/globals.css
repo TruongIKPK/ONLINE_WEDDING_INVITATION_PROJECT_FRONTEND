@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+/* Config variables */
+@theme {
+  /* Example: --color-primary: #0070f3;  */
+
+  /* Breakpoint */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Global styles */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
