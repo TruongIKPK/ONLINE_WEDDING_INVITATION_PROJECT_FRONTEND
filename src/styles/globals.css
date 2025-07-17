@@ -2,7 +2,13 @@
 
 /* Config variables */
 @theme {
-  /* Example: --color-primary: #0070f3;  */
+  /* Màu sắc */
+  --color-primary: #b42e2f; /* Crimson Red - màu chủ đạo */
+  --color-primary-dark: #2e2724; /* Espresso - text, stroke */
+  --color-primary-light: #e46b70; /* Coral Rose - màu phụ */
+  --color-bg-main: #fef6f3; /* Peach Cloud - background chính */
+  --color-bg-secondary: #ffedd8; /* Peach Fuzz - hover, modal */
+  --color-gray: #a3a3a3; /* Grey - shadow, thay thế espresso */
 
   /* Breakpoint */
   --breakpoint-sm: 640px;
