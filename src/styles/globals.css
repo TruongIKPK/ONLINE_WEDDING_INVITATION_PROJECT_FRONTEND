@@ -1,5 +1,6 @@
 @import 'tailwindcss';
-
+@import 'swiper/css/bundle';
+@import '../styles/container.css';
 /* Config variables */
 @theme {
   /* Màu sắc */
