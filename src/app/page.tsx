@@ -1,11 +1,11 @@
 import Navbar from '../components/layout/Navbar';
-import Container from '../components/layout/Container';
+import LandingPage from '../components/layout/LandingPage';
 import Footer from '../components/layout/Footer';
 export default function Home() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
-      <Container />
+      <LandingPage />
       <Footer />
     </div>
   );
