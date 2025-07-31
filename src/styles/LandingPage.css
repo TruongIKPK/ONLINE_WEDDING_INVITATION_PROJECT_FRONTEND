@@ -1,0 +1,413 @@
+/* header .doodle07 {
+  width: 100%;
+  height: 180px;
+  position: absolute;
+  top: 90px;
+  left: -600px;
+  object-fit: contain;
+}
+header .doodle09 {
+  position: absolute;
+  top: 250px;
+  right: 100px;
+  object-fit: cover;
+  width: 200px;
+}
+header .wedding-header {
+  width: 50%;
+  float: left;
+  height: 500px;
+  padding-top: 150px;
+}
+header .wedding-header h1 {
+  text-align: center;
+  font-family: 'Viaoda Libre', cursive;
+}
+header .wedding-header p {
+  text-align: justify;
+}
+header .create-card-btn {
+  text-align: center;
+}
+header .create-card-btn .btn {
+  color: #b42e2f;
+  font-weight: bold;
+  font-style: italic;
+  border: 3px solid #b42e2f;
+  width: 250px;
+  border-radius: 12px;
+}
+header .img-daure .daure {
+  width: 50%;
+  float: right;
+  height: 500px;
+  object-fit: contain;
+}
+header .img-daure img {
+  background-size: contain;
+  height: 100%;
+  object-fit: contain;
+} */
+
+.navigationPrev,
+.navigationNext {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.navigationPrev {
+  left: -5%;
+  border-top: 15px solid transparent;
+  border-right: 20px solid black;
+  border-bottom: 15px solid transparent;
+  filter: drop-shadow(0 4px 8px rgba(233, 30, 99, 0.3));
+}
+
+.navigationNext {
+  right: -5%;
+  border-top: 15px solid transparent;
+  border-left: 20px solid black;
+  border-bottom: 15px solid transparent;
+  filter: drop-shadow(0 4px 8px rgba(29, 28, 29, 0.173));
+}
+.navigationPrev:hover,
+.navigationNext:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper {
+  overflow: hidden !important;
+  padding-bottom: 50px;
+  position: relative;
+}
+.swiper-wrapper {
+  padding: 20px 0;
+}
+.swiper-slide {
+  transition: transform 0.4s ease;
+  display: flex !important;
+  justify-content: center;
+}
+
+.swiper-slide .card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.swiper-slide-active .card {
+  width: 400px;
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  padding: '30px 0 50px 0';
+  margin: 0 10px;
+}
+
+.swiper-slide:not(.swiper-slide-active) .card {
+  transform: scale(1);
+  z-index: 1;
+  margin: 0 10px;
+}
+
+.featured-templates {
+  overflow: visible;
+  margin-top: -10%;
+}
+.featured-templates > h2 {
+  font-weight: 700;
+  font-size: 46px;
+}
+
+@media (max-width: 768px) {
+  .navigationPrev,
+  .navigationNext {
+    top: 50%;
+    transform: translateY(-50%) scale(0.8);
+  }
+
+  .navigationPrev {
+    left: 20px;
+  }
+
+  .navigationNext {
+    right: 20px;
+  }
+}
+
+.huongdancacbuoc .stt {
+  font-weight: 700;
+  font-size: 96px;
+  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  margin-right: 20px;
+}
+
+.huongdancacbuoc .f1 {
+  font-weight: 500;
+  font-size: 64px;
+  font-style: italic;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.huongdancacbuoc .chonmauthiep,
+.huongdancacbuoc .chinhsuanoidung,
+.huongdancacbuoc .thanhtoan,
+.huongdancacbuoc .luu-chiase {
+  display: flex;
+  align-items: center;
+}
+
+.chonmauthiep {
+  padding-left: 60px;
+}
+.chinhsuanoidung {
+  padding-left: 180px;
+  margin-top: 25px;
+}
+
+.luu-chiase {
+  padding-left: 720px;
+}
+
+.thanhtoan {
+  padding-left: 550px;
+}
+
+.lyruou {
+  position: absolute;
+  top: 750px;
+  left: 90px;
+  max-width: 450px;
+  text-align: left;
+}
+
+.lyruou > img {
+  object-fit: cover;
+}
+
+.tt-text {
+  width: 80%;
+  display: flex;
+  align-items: center;
+}
+.doodle08 {
+  position: absolute;
+  top: 1245px;
+  right: 150px;
+  width: 100px;
+  height: 250px;
+  object-fit: cover;
+}
+.vector11 {
+  position: absolute;
+  top: 1350px;
+  right: 550px;
+}
+.vector13 {
+  position: absolute;
+  top: 1530px;
+  right: 350px;
+}
+.vector11-1 {
+  position: absolute;
+  top: 1700px;
+  right: 120px;
+}
+
+@media (max-width: 768px) {
+  .huongdancacbuoc {
+    transform: scale(0.9) !important;
+    margin-left: 5%;
+    transform-origin: top left !important;
+    width: 200% !important;
+    text-align: center;
+  }
+  .chonmauthiep {
+    margin-left: -80px;
+  }
+  .chinhsuanoidung {
+    margin-left: -160px;
+  }
+  .huongdancacbuoc .thanhtoan1 {
+    margin-top: 450px;
+    margin-left: -280px;
+    display: flex;
+  }
+  .huongdancacbuoc .luu-chiase {
+    padding-top: 15px;
+    margin-left: -360px;
+    padding-left: 520px;
+    display: flex;
+  }
+  .huongdancacbuoc .thanhtoan {
+    margin-top: -430px;
+    margin-left: -150px;
+  }
+  .vector11 {
+    position: absolute;
+    top: 20px;
+    left: 170px;
+  }
+  .vector13 {
+    position: absolute;
+    top: 110px;
+    left: 250px;
+  }
+  .vector11-1 {
+    position: absolute;
+    top: 190px;
+    left: 270px;
+  }
+  .doodle08 {
+    position: absolute;
+    top: -90px;
+    left: 250px;
+  }
+  .lyruou {
+    position: absolute;
+    top: 100px;
+    left: -5px;
+  }
+  .lyruou > img {
+    object-fit: cover;
+  }
+  .vector11,
+  .vector13,
+  .vector11-1,
+  .doodle08,
+  .lyruou {
+    transform: scale(0.5) !important;
+    transform-origin: top left !important;
+  }
+
+  .huongdancacbuoc .stt {
+    font-size: 30px !important;
+  }
+
+  .huongdancacbuoc .f1 {
+    font-size: 20px !important;
+  }
+}
+.cauhoi {
+  margin-top: 10px;
+}
+.cauhoi > h4 {
+  font-size: 46px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+.cauhoi div {
+  display: flex;
+  border: 2px solid black;
+  margin-top: 10px;
+  border-radius: 12px;
+  height: 80px;
+}
+.cauhoi .c1 .stt {
+  font-size: 40px;
+  font-family: 'Inter', sans-serif;
+  margin-left: 15px;
+  font-weight: 400;
+  padding-top: 10px;
+}
+.cauhoi .c1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.cauhoi .c1 .f1 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 20px;
+  font-family: 'Inter', sans-serif;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+.blog {
+  margin-top: 50px;
+}
+.blog > h4 {
+  font-size: 46px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+.blog > a {
+  text-decoration: none;
+  color: black;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+.blog-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 0px 5px gainsboro;
+  text-decoration: none;
+  color: inherit;
+}
+
+.blog-img {
+  width: 200px;
+  height: 150px;
+  flex-shrink: 0;
+}
+
+.blog-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+@media (max-width: 767px) {
+  .blog-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .blog-img {
+    width: 100% !important;
+    height: auto;
+    margin-bottom: 12px;
+  }
+
+  .blog-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .blog-text {
+    width: 100%;
+  }
+}
+
+.thiepcuoionline {
+  font-family: 'Viaoda Libre', cursive;
+  font-weight: 400;
+  font-size: 62px;
+  color: #b42e2f !important;
+  margin-bottom: 1rem;
+  border: 3px solid #b42e2f;
+}
