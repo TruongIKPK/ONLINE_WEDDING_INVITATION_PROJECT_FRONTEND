@@ -1,8 +1,10 @@
+"use client";
+
 import React, { useState } from "react";
 
 type PrimaryVariant = "default" | "hover" | "click" | "disabled";
 type SecondaryVariant = "default" | "click" | "no_outline" | "no_outline_hover";
-type GhostVariant = "default" | "hover";
+type GhostVariant = "default" | "hover" | "click";
 
 type ButtonStyle = {
     text: string;
@@ -22,44 +24,136 @@ type ButtonVariants = {
 
 const BUTTON_STYLES: ButtonVariants = {
     primary: {
-        default: { text: "#B42E2F", background: "#FEF6F3", border: "#B42E2F" },
-        hover: { text: "#E46B70", background: "#FEF6F3", border: "#E46B70" },
-        click: { text: "#B42E2F", background: "#FFEDD8", border: "#B42E2F" },
-        disabled: { text: "#A3A3A3", background: "#FEF6F3", border: "#A3A3A3" },
+        default: {
+            text: 'var(--color-primary)',
+            background: 'var(--color-bg-main)',
+            border: 'var(--color-primary)',
+            fontWeight: "bold",
+        },
+
+        hover: {
+            text: 'var(--color-primary-light)',
+            background: 'var(--color-bg-main)',
+            border: 'var(--color-primary-light)',
+            fontWeight: "bold",
+        },
+
+        click: {
+            text: 'var(--color-primary)',
+            background: 'var(--color-bg-secondary)',
+            border: 'var(--color-primary)',
+            fontWeight: "bold",
+        },
+
+        disabled: {
+            text: 'var(--color-primary)',
+            background: 'var(--color-bg-main)',
+            border: 'var(--color-gray)',
+            fontWeight: "bold",
+        },
     },
     secondary: {
-        default: { text: "#A3A3A3", background: "#FEF6F3", border: "#A3A3A3" },
-        click: { text: "#2E2724", background: "#A3A3A3", border: "#2E2724" },
-        no_outline: { text: "#2E2724", background: "transparent", border: "transparent" },
-        no_outline_hover: { text: "#2E2724", background: "transparent", border: "transparent", fontWeight: "bold", textDecoration: "underline", },
+        default: {
+            text: 'var(--color-gray)',
+            background: 'var(--color-bg-main)',
+            border: 'var(--color-gray)',
+            fontWeight: "lighter",
+        },
+
+        click: {
+            text: 'var(--color-primary-dark)',
+            background: 'var(--color-gray)',
+            border: 'var(--color-primary-dark)',
+            fontWeight: "lighter",
+        },
+
+        no_outline: {
+            text: 'var(--color-primary-dark)',
+            background: "transparent",
+            border: "transparent",
+            fontWeight: "lighter",
+        },
+
+        no_outline_hover: {
+            text: 'var(--color-primary-dark)',
+            background: "transparent",
+            border: "transparent",
+            fontWeight: "bold",
+            textDecoration: "underline",
+        },
     },
     ghost: {
-        default: { text: "#A3A3A3", background: "transparent", border: "transparent" },
-        hover: { text: "#2E2724", background: "transparent", border: "transparent" },
-    },
+        default: {
+            text: 'var(--color-gray)',
+            background: "transparent",
+            border: "transparent",
+            fontWeight: "lighter",
+        },
+
+        hover: {
+            text: 'var(--color-primary-dark)',
+            background: "transparent",
+            border: "transparent",
+            fontWeight: "lighter",
+        },
+
+        click: {
+            text: 'var(--color-primary-dark)',
+            background: 'var(--color-gray)',
+            border: 'var(--color-primary-dark)',
+            fontWeight: "lighter",
+        },
+    }
 } as const;
 
 type VariantMode = "outline" | "no_outline";
 
+type ButtonSize = "small" | "medium" | "large";
+
+const SIZE_STYLES: Record<ButtonSize, React.CSSProperties> = {
+    small: {
+        padding: "0px 0px",
+        fontSize: "12px",
+    },
+    medium: {
+        padding: "11px 7px",
+        fontSize: "12px",
+    },
+    large: {
+        padding: "20px 16px",
+        fontSize: "22px",
+    },
+};
+
+
 type Props = {
     type: ButtonType;
     variantMode?: VariantMode;
+    className?: string;
+    size?: ButtonSize;
     disabled?: boolean;
     children: React.ReactNode;
     onClick?: () => void;
 };
 
-const Button = ({ type, disabled = false, children, onClick }: Props) => {
+const Button = ({ type, variantMode, className = "", size = "medium", disabled = false, children, onClick }: Props) => {
     const [state, setState] = useState<"default" | "hover" | "click">("default");
 
     const getCurrentVariant = (): string => {
         if (disabled) return "disabled";
         if (state === "click") return "click";
+
         if (state === "hover") {
-            if (type === "secondary") return "no_outline_hover";
+            if (type === "secondary") {
+                return variantMode === "no_outline" ? "no_outline_hover" : "default";
+            }
             return "hover";
         }
-        if (type === "secondary") return "no_outline";
+
+        if (type === "secondary") {
+            return variantMode === "no_outline" ? "no_outline" : "default";
+        }
+
         return "default";
     };
 
@@ -78,8 +172,10 @@ const Button = ({ type, disabled = false, children, onClick }: Props) => {
         style = BUTTON_STYLES.ghost[currentVariant as GhostVariant];
     }
 
+    const sizeStyle = SIZE_STYLES[size];
+
     const buttonStyle: React.CSSProperties = {
-        padding: "8px 10px",
+        ...sizeStyle,
         borderRadius: 8,
         color: style.text,
         backgroundColor: style.background,
@@ -106,6 +202,7 @@ const Button = ({ type, disabled = false, children, onClick }: Props) => {
             onMouseEnter={() => !disabled && setState("hover")}
             onMouseLeave={() => !disabled && setState("default")}
             style={buttonStyle}
+            className={className}
         >
             {children}
         </button>
@@ -113,11 +210,11 @@ const Button = ({ type, disabled = false, children, onClick }: Props) => {
 };
 
 export type {
-  PrimaryVariant,
-  SecondaryVariant,
-  GhostVariant,
-  ButtonStyle,
-  ButtonType
+    PrimaryVariant,
+    SecondaryVariant,
+    GhostVariant,
+    ButtonStyle,
+    ButtonType
 };
 
 export { BUTTON_STYLES };
