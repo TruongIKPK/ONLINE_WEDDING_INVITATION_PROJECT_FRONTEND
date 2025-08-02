@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 type Input = "default" | "typing" | "disable" | "hover" | "error";
@@ -10,16 +12,41 @@ type InputStyle = {
 
 const INPUT_STYLES: Record<Input, InputStyle> = {
 
-    default: { text: "#2E2724", background: "#FEF6F3", border: "#A3A3A3" },
-    typing: { text: "#2E2724", background: "#FEF6F3", border: "#2E2724" },
-    disable: { text: "#A3A3A3", background: "#FEF6F3", border: "#A3A3A3" },
-    hover: { text: "#2E2724", background: "#A3A3A3", border: "#2E2724" },
-    error: { text: "#B42E2F", background: "#FEF6F3", border: "#B42E2F" },
+    default: {
+        text: 'var(--color-primary-dark)',
+        background: 'var(--color-bg-main)',
+        border: 'var(--color-gray)'
+    },
+
+    typing: {
+        text: 'var(--color-primary-dark)',
+        background: 'var(--color-bg-main)',
+        border: 'var(--color-primary-dark)'
+    },
+
+    disable: {
+        text: 'var(--color-gray)',
+        background: 'var(--color-bg-main)',
+        border: 'var(--color-gray)'
+    },
+
+    hover: {
+        text: 'var(--color-primary-dark)',
+        background: 'var(--color-gray)',
+        border: 'var(--color-primary-dark)'
+    },
+
+    error: {
+        text: 'var(--color-primary)',
+        background: 'var(--color-bg-main)',
+        border: 'var(--color-primary)'
+    },
 
 };
 
 type Props = {
     variant?: Input;
+    className?: string;
     disabled?: boolean;
     error?: boolean;
     value?: string;
@@ -28,6 +55,7 @@ type Props = {
 
 const Input = ({
     variant = "default",
+    className = "",
     disabled = false,
     error = false,
     value = "",
