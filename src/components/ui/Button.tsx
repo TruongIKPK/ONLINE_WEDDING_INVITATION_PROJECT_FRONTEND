@@ -114,14 +114,20 @@ const SIZE_STYLES: Record<ButtonSize, React.CSSProperties> = {
     small: {
         padding: "0px 0px",
         fontSize: "12px",
+        borderRadius: "8px",
+        borderWidth: "1px",
     },
     medium: {
-        padding: "11px 7px",
+        padding: "7px 11px",
         fontSize: "12px",
+        borderRadius: "8px",
+        borderWidth: "1px",
     },
     large: {
-        padding: "20px 16px",
+        padding: "16px 20px",
         fontSize: "22px",
+        borderRadius: "12px",
+        borderWidth: "3px",
     },
 };
 
@@ -131,12 +137,13 @@ type Props = {
     variantMode?: VariantMode;
     className?: string;
     size?: ButtonSize;
+    style?: React.CSSProperties;
     disabled?: boolean;
     children: React.ReactNode;
     onClick?: () => void;
 };
 
-const Button = ({ type, variantMode, className = "", size = "medium", disabled = false, children, onClick }: Props) => {
+const Button = ({ type, variantMode, className = "", size = "medium", style: overrideStyle, disabled = false, children, onClick }: Props) => {
     const [state, setState] = useState<"default" | "hover" | "click">("default");
 
     const getCurrentVariant = (): string => {
@@ -176,18 +183,18 @@ const Button = ({ type, variantMode, className = "", size = "medium", disabled =
 
     const buttonStyle: React.CSSProperties = {
         ...sizeStyle,
-        borderRadius: 8,
         color: style.text,
-        backgroundColor: style.background,
         borderColor: style.border,
-        fontWeight: style.fontWeight,
         textDecoration: style.textDecoration,
+        fontWeight: style.fontWeight,
         borderStyle: "solid",
-        borderWidth: "3px",
         cursor: disabled ? "not-allowed" : "pointer",
         transition: "all 0.15s ease-in-out",
         outline: "none",
-        boxShadow: "5px 5px 0 rgba(217, 213, 211, 0.4)",
+        ...(type === "primary" && {
+            boxShadow: "5px 5px 0 rgba(217, 213, 211, 0.4)",
+        }),
+        ...overrideStyle,
     };
 
     return (
