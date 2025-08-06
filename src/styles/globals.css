@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import 'swiper/css/bundle';
+@import '../styles/LandingPage.css';
 
 /* Config variables */
 @theme {
@@ -24,4 +26,5 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
