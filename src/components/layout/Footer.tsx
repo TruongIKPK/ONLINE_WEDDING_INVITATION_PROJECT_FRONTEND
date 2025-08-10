@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Logo + Description */}
         <div className="flex-1 max-w-sm">
           <Image
-            src="/images/THIỆP CƯỚI ONLINE LOGO-02.png"
+            src="/images/logothiepcuoi.png"
             alt="Logo"
             width={900}
             height={100}

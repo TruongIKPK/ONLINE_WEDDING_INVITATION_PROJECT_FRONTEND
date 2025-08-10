@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import SearchBar from '@/components/layout/Searchbar';
-import { HiMenu } from 'react-icons/hi'; // hoặc dùng bất kỳ icon nào
+import { HiMenu } from 'react-icons/hi';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,12 +13,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Logo */}
         <div className="flex items-center gap-3 min-w-[180px]">
-          <Image
-            src="/images/header/THIỆP CƯỚI ONLINE LOGO-02.png"
-            alt="Logo"
-            width={200}
-            height={45}
-          />
+          <Image src="/images/header/logothiepcuoi.png" alt="Logo" width={200} height={45} />
         </div>
 
         {/* Search bar: ẩn trên mobile */}

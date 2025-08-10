@@ -7,7 +7,7 @@ export default function Header() {
       {/* Left: Text content */}
       <div className="w-full md:w-1/2 text-center md:text-left font-inter text-[#333]">
         <Image
-          src="/images/header/WEDDING DOODLE-07.png"
+          src="/images/header/WEDDINGDOODLE_07.png"
           alt="doodle"
           width={150}
           height={100}
