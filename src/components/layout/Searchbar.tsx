@@ -8,7 +8,7 @@ export default function SearchBar() {
 
   return (
     <div
-      className={`flex items-center w-full max-w-md px-4 py-3 rounded-2xl border transition-all ${
+      className={`flex items-center w-96 px-4 py-3 rounded-2xl border transition-all ${
         isFocused ? 'border-[#1e1e1e] bg-[#fdf3ef]' : 'border-[#ccc] bg-[#fdf3ef]'
       }`}
     >

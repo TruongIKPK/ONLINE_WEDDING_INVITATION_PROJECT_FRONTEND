@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Logo + Description */}
         <div className="flex-1 max-w-sm">
           <Image
-            src="/images/logothiepcuoi.png"
+            src="/images/header/logothiepcuoi.png"
             alt="Logo"
             width={900}
             height={100}
@@ -25,9 +25,9 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1 mt-6 md:mt-0">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-6 flex-1 mt-6 md:mt-0">
           {/* Thông tin liên hệ */}
-          <div>
+          <div className="flex-1 min-w-[180px]">
             <h4 className="font-semibold mb-2 whitespace-nowrap">Thông tin liên hệ</h4>
             <p className="mb-2">Điện thoại: 0704500354</p>
             <Link
@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
 
           {/* Tin tức */}
-          <div>
+          <div className="flex-1 min-w-[180px]">
             <h4 className="font-semibold mb-2">Tin tức</h4>
             <Link href="#" className="text-black !no-underline hover:!underline mb-2 block">
               Blog
@@ -53,7 +53,7 @@ export default function Footer() {
           </div>
 
           {/* Danh mục */}
-          <div>
+          <div className="flex-1 min-w-[180px]">
             <h4 className="font-semibold mb-2">Danh mục</h4>
             <Link href="/" className="text-black !no-underline hover:!underline mb-2 block">
               Trang chủ
