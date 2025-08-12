@@ -35,7 +35,7 @@ export default function Header() {
         </div>
 
         {/* SearchBar - ẩn khi màn <= 670px */}
-        <div className="flex-1 flex justify-center max-w-full xs:max-w-[250px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-none max-[670px]:hidden">
+        <div className="flex-1 flex justify-center max-w-full xs:max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[500px] xl:max-w-none max-[670px]:hidden">
           <SearchBar />
         </div>
 
