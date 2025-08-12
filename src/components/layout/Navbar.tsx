@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import SearchBar from '@/components/layout/Searchbar';
 import { HiMenu } from 'react-icons/hi';
@@ -8,12 +8,22 @@ import { IoCloseOutline } from 'react-icons/io5';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    function handleResize() {
+      setIsMobileView(window.innerWidth <= 670);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <header className="bg-[#FEF6F3] px-4 py-3 shadow-sm">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Logo - Luôn hiển thị và co giãn hợp lý */}
-        <div className="flex-shrink-0 min-w-[120px] sm:min-w-[150px] md:min-w-[200px]">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+        {/* Logo */}
+        <div className="flex-shrink-0 min-w-[100px] sm:min-w-[120px]">
           <Image
             src="/images/header/logothiepcuoi.png"
             alt="Logo"
@@ -24,13 +34,18 @@ export default function Header() {
           />
         </div>
 
-        {/* Search bar - Hiển thị trên tablet/desktop */}
-        <div className="hidden sm:flex flex-1 max-w-md mx-4">
+        {/* SearchBar - ẩn khi màn <= 670px */}
+        <div className="flex-1 flex justify-center max-w-full xs:max-w-[250px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-none max-[670px]:hidden">
           <SearchBar />
         </div>
 
-        {/* Navigation desktop */}
-        <nav className="hidden md:flex items-center gap-6 text-[17px] whitespace-nowrap">
+        {/* Navigation - ẩn khi màn <= 670px */}
+        <nav
+          className="hidden lg:flex items-center
+            gap-4 xl:gap-5 2xl:gap-6
+            text-[15px] xl:text-[16px] 2xl:text-[17px]
+            max-[670px]:hidden"
+        >
           <a href="#" className="text-black !no-underline hover:!underline">
             Trang chủ
           </a>
@@ -43,7 +58,7 @@ export default function Header() {
           <a href="#" className="text-black !no-underline hover:!underline">
             Liên hệ
           </a>
-          <a href="#" className="text-black !no-underline hover:!text-red-500 ml-6">
+          <a href="#" className="text-black !no-underline hover:!text-red-500">
             Sign up
           </a>
           <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
@@ -51,53 +66,47 @@ export default function Header() {
           </a>
         </nav>
 
-        {/* Hamburger menu - Hiển thị trên mobile/tablet */}
-        <div className="flex md:hidden items-center gap-4">
-          {/* Search icon cho mobile (optional) */}
-          <button
-            className="sm:hidden"
-            onClick={() => {
-              /* Logic mở search */
-            }}
-          >
-            {/* Icon search */}
-          </button>
+        {/* Icon menu - luôn hiện khi màn ≤ 670px */}
+        <div className="flex items-center flex-shrink-0 max-[670px]:block lg:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
-            className="text-3xl text-black"
+            className="text-2xl"
           >
             {isMenuOpen ? <IoCloseOutline /> : <HiMenu />}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu dropdown */}
+      {/* Mobile dropdown menu */}
       {isMenuOpen && (
-        <div className="md:hidden mt-3 px-4 flex flex-col gap-4 text-[16px] border-t border-gray-200 pt-4">
-          {/* Search bar trong mobile menu (nếu cần) */}
-          <div className="sm:hidden w-full">
-            <SearchBar />
-          </div>
-          <a href="#" className="text-black !no-underline hover:!underline">
-            Trang chủ
-          </a>
-          <a href="#" className="text-black !no-underline hover:!underline">
-            Tạo thiệp
-          </a>
-          <a href="#" className="text-black !no-underline hover:!underline">
-            Kho mẫu
-          </a>
-          <a href="#" className="text-black !no-underline hover:!underline">
-            Liên hệ
-          </a>
-          <div className="flex gap-4 mt-2">
-            <a href="#" className="text-black !no-underline hover:!text-red-500">
-              Sign up
+        <div className="lg:hidden max-[670px]:block mt-3 px-4 py-4 flex flex-col gap-3 text-[16px] border-t border-gray-200 bg-white w-full shadow-md">
+          {isMobileView && (
+            <div className="flex justify-center items-center py-3 pt-0 border-b border-gray-200">
+              <SearchBar />
+            </div>
+          )}
+          <div className="flex flex-col gap-3 text-[16px]">
+            <a href="#" className="text-black !no-underline hover:!underline">
+              Trang chủ
             </a>
-            <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
-              Login
+            <a href="#" className="text-black !no-underline hover:!underline">
+              Tạo thiệp
             </a>
+            <a href="#" className="text-black !no-underline hover:!underline">
+              Kho mẫu
+            </a>
+            <a href="#" className="text-black !no-underline hover:!underline">
+              Liên hệ
+            </a>
+            <div className="flex gap-2">
+              <a href="#" className="text-black !no-underline hover:!text-red-500">
+                Sign up
+              </a>
+              <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
+                Login
+              </a>
+            </div>
           </div>
         </div>
       )}
