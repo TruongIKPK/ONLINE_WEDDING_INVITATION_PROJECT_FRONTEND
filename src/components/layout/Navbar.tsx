@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-[#FEF6F3] px-4 py-0 shadow-sm" style={{ minHeight: '90px' }}>
+    <header className="bg-[#FEF6F3] px-4 py-0 shadow-md" style={{ minHeight: '90px' }}>
       <div className="max-w-7xl h-[90px] mx-auto flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex-shrink-0 min-w-[100px] sm:min-w-[120px]">
