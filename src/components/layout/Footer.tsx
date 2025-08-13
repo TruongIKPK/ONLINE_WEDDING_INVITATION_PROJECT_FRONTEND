@@ -8,11 +8,11 @@ import { SiZalo, SiMessenger } from 'react-icons/si';
 export default function Footer() {
   return (
     <footer className="bg-[#FEF6F3] text-[#2C2C2C] py-10 px-5 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10 md:gap-16">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* Logo + Description */}
         <div className="flex-1 max-w-sm">
           <Image
-            src="/images/THIỆP CƯỚI ONLINE LOGO-02.png"
+            src="/images/header/logothiepcuoi.png"
             alt="Logo"
             width={900}
             height={100}
@@ -24,11 +24,11 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 flex-1 mt-6 md:mt-0">
+        {/* All columns including Connect Us */}
+        <div className="flex flex-col sm:flex-row flex-wrap gap-8 flex-[2] justify-between">
           {/* Thông tin liên hệ */}
-          <div>
-            <h4 className="font-semibold mb-2 whitespace-nowrap">Thông tin liên hệ</h4>
+          <div className="min-w-[180px]">
+            <h4 className="font-semibold mb-3">Thông tin liên hệ</h4>
             <p className="mb-2">Điện thoại: 0704500354</p>
             <Link
               href="mailto:thiepcuoionline.com"
@@ -39,8 +39,8 @@ export default function Footer() {
           </div>
 
           {/* Tin tức */}
-          <div>
-            <h4 className="font-semibold mb-2">Tin tức</h4>
+          <div className="min-w-[180px]">
+            <h4 className="font-semibold mb-3">Tin tức</h4>
             <Link href="#" className="text-black !no-underline hover:!underline mb-2 block">
               Blog
             </Link>
@@ -53,8 +53,8 @@ export default function Footer() {
           </div>
 
           {/* Danh mục */}
-          <div>
-            <h4 className="font-semibold mb-2">Danh mục</h4>
+          <div className="min-w-[180px]">
+            <h4 className="font-semibold mb-3">Danh mục</h4>
             <Link href="/" className="text-black !no-underline hover:!underline mb-2 block">
               Trang chủ
             </Link>
@@ -68,24 +68,24 @@ export default function Footer() {
               Liên hệ
             </Link>
           </div>
-        </div>
 
-        {/* Socials */}
-        <div className="mt-6 md:mt-0 flex flex-col items-start gap-3">
-          <h4 className="font-semibold text-lg whitespace-nowrap">Connect with us</h4>
-          <div className="flex gap-4 text-2xl">
-            <Link href="#" target="_blank">
-              <FaFacebook className="hover:scale-110 cursor-pointer text-[#1877F2]" />
-            </Link>
-            <Link href="#" target="_blank">
-              <SiZalo className="hover:scale-110 cursor-pointer text-[#0068FF]" />
-            </Link>
-            <Link href="#" target="_blank">
-              <SiMessenger className="hover:scale-110 cursor-pointer text-[#00B2FF]" />
-            </Link>
-            <Link href="#" target="_blank">
-              <FaTiktok className="hover:scale-110 cursor-pointer text-black dark:text-white" />
-            </Link>
+          {/* Socials - now integrated with other columns */}
+          <div className="min-w-[180px]">
+            <h4 className="font-semibold mb-3">Connect with us</h4>
+            <div className="flex gap-4 text-2xl">
+              <Link href="#" target="_blank">
+                <FaFacebook className="hover:scale-110 cursor-pointer text-[#1877F2]" />
+              </Link>
+              <Link href="#" target="_blank">
+                <SiZalo className="hover:scale-110 cursor-pointer text-[#0068FF]" />
+              </Link>
+              <Link href="#" target="_blank">
+                <SiMessenger className="hover:scale-110 cursor-pointer text-[#00B2FF]" />
+              </Link>
+              <Link href="#" target="_blank">
+                <FaTiktok className="hover:scale-110 cursor-pointer text-black" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

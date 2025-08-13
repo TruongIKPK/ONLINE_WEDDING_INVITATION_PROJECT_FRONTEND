@@ -11,27 +11,27 @@ import 'swiper/css/pagination';
 import { User } from 'lucide-react';
 const templates = [
   {
-    src: '/images/mauduocuachuong/Nhật An - Thanh Trúc.png',
+    src: '/images/mauduocuachuong/NhatAn_ThanhTruc.png',
     name: 'Nhật An - Thanh Trúc',
     views: 10000,
   },
   {
-    src: '/images/mauduocuachuong/Son Jeney - Emma Charlotte.png',
+    src: '/images/mauduocuachuong/SonJeney_EmmaCharlotte.png',
     name: 'Son Jeney - Emma Charlotte',
     views: 10000,
   },
   {
-    src: '/images/mauduocuachuong/An Ngọc - Phú Quý.png',
+    src: '/images/mauduocuachuong/AnNgoc_PhuQuy.png',
     name: 'An Ngọc - Phú Quý',
     views: 10000,
   },
   {
-    src: '/images/mauduocuachuong/An Ngọc - Phú Quý.png',
+    src: '/images/mauduocuachuong/AnNgoc_PhuQuy.png',
     name: 'An Ngọc - Phú Quý',
     views: 10000,
   },
   {
-    src: '/images/mauduocuachuong/An Ngọc - Phú Quý.png',
+    src: '/images/mauduocuachuong/AnNgoc_PhuQuy.png',
     name: 'An Ngọc - Phú Quý',
     views: 10000,
   },
@@ -85,7 +85,7 @@ export default function MainContent() {
       </div>
       <div className="huongdancacbuoc">
         <Image
-          src="/images/huongdancacbuoc/WEDDING DOODLE-08.png"
+          src="/images/huongdancacbuoc/WEDDINGDOODLE_08.png"
           alt="doodle"
           width={150}
           height={50}
@@ -93,7 +93,7 @@ export default function MainContent() {
         />
         <div className="chonmauthiep grid grid-cols-1">
           <Image
-            src="/images/huongdancacbuoc/Vector 11.png"
+            src="/images/huongdancacbuoc/Vector_11.png"
             alt=""
             width={150}
             height={50}
@@ -104,7 +104,7 @@ export default function MainContent() {
         </div>
         <div className="chinhsuanoidung flex flex-row">
           <Image
-            src="/images/huongdancacbuoc/Vector 13.png"
+            src="/images/huongdancacbuoc/Vector_13.png"
             alt=""
             width={100}
             height={50}
@@ -115,7 +115,7 @@ export default function MainContent() {
         </div>
         <div className="thanhtoan">
           <Image
-            src="/images/huongdancacbuoc/Vector 11.png"
+            src="/images/huongdancacbuoc/Vector_11.png"
             alt=""
             width={150}
             height={50}
@@ -123,7 +123,7 @@ export default function MainContent() {
           />
           <div className="lyruou">
             <Image
-              src="/images/huongdancacbuoc/5939865_3023097-05.png"
+              src="/images/huongdancacbuoc/lyruou.png"
               alt="lyruou"
               width={900}
               height={100}
@@ -164,42 +164,42 @@ export default function MainContent() {
               title: '5 Lý Do Bạn Nên Chọn Thiệp Cưới Online Thay Vì In Giấy',
               excerpt:
                 'Thiệp cưới online không chỉ tiết kiệm chi phí, mà còn thân thiện với môi trường...',
-              image: '/images/blog/Rectangle 9011.png',
+              image: '/images/blog/Rectangle_9011.png',
               slug: 'ly-do-chon-thiep-cuoi-online',
             },
             {
               title: 'Cách Gửi Thiệp Cưới Online Qua Zalo, Messenger và Email',
               excerpt:
                 'Gửi thiệp cưới chưa bao giờ đơn giản đến thế! Hướng dẫn bạn cách chia sẻ qua các nền tảng...',
-              image: '/images/blog/Rectangle 9011 (2).png',
+              image: '/images/blog/Rectangle9011_2.png',
               slug: 'gui-thiep-cuoi-online',
             },
             {
               title: 'Hướng Dẫn Tạo Thiệp Cưới Online Trong 5 Phút',
               excerpt:
                 'Không cần biết thiết kế, bạn vẫn có thể tạo ra một tấm thiệp cưới đẹp mắt chỉ với vài bước đơn giản....',
-              image: '/images/blog/Rectangle 9011 (5).png',
+              image: '/images/blog/Rectangle9011_5.png',
               slug: 'huong-dan-tao-thiep-cuoi-online',
             },
             {
               title: 'Cá Nhân Hóa Thiệp Cưới Online – Làm Sao Cho Khác Biệt?',
               excerpt:
                 'Bạn muốn thiệp cưới mang dấu ấn riêng? Hãy khám phá cách thêm hình ảnh, video, nhạc nền và thông tin cá nhân để tạo nên ...',
-              image: '/images/blog/Rectangle 9011 (3).png',
+              image: '/images/blog/Rectangle9011_3.png',
               slug: 'ca-nhan-hoa-thiep-cuoi-online',
             },
             {
               title: 'Top 10 Mẫu Thiệp Cưới Online Được Yêu Thích Nhất 2025',
               excerpt:
                 'Bạn chưa biết chọn mẫu nào? Dưới đây là 10 mẫu thiệp cưới online hiện đại, sang trọng, được nhiều cặp đôi lựa chọn nhờ thiết kế đẹp....',
-              image: '/images/blog/Rectangle 9011 (1).png',
+              image: '/images/blog/Rectangle9011_1.png',
               slug: 'top-10-mau-thiep-cuoi-online',
             },
             {
               title: 'So Sánh Chi Phí: Thiệp Cưới In Truyền Thống vs Thiệp Cưới Online',
               excerpt:
                 'Thiệp in đẹp nhưng tốn kém? Cùng phân tích chi phí thật sự của cả hai hình thức để bạn dễ dàng quyết định phương án vừa đẹp....',
-              image: '/images/blog/Rectangle 9011 (4).png',
+              image: '/images/blog/Rectangle9011_4.png',
               slug: 'phan-tich-chi-phi-thiep-cuoi-online',
             },
           ].map((post, idx) => (
