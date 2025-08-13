@@ -7,7 +7,10 @@ import { SiZalo, SiMessenger } from 'react-icons/si';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#FEF6F3] text-[#2C2C2C] py-10 px-5 md:px-20">
+    <footer
+      className="bg-[#FEF6F3] text-[#2C2C2C] py-10 px-5 md:px-20"
+      style={{ boxShadow: 'var(--shadow-top)' }}
+    >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* Logo + Description */}
         <div className="flex-1 max-w-sm">
