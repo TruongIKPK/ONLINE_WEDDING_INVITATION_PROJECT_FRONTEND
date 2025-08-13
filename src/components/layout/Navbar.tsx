@@ -99,14 +99,12 @@ export default function Header() {
             <a href="#" className="text-black !no-underline hover:!underline">
               Liên hệ
             </a>
-            <div className="flex gap-2">
-              <a href="#" className="text-black !no-underline hover:!text-red-500">
-                Sign up
-              </a>
-              <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
-                Login
-              </a>
-            </div>
+            <a href="#" className="text-black !no-underline hover:!text-red-500">
+              Sign up
+            </a>
+            <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
+              Login
+            </a>
           </div>
         </div>
       )}
