@@ -3,7 +3,10 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="flex flex-col-reverse md:flex-row items-center justify-between px-4 py-8 gap-8">
+    <header
+      className="flex flex-col-reverse md:flex-row items-center justify-between px-4 py-2 gap-8 "
+      style={{ minHeight: '90px' }}
+    >
       {/* Left: Text content */}
       <div className="w-full md:w-1/2 text-center md:text-left font-inter text-[#333]">
         <Image

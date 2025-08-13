@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="bg-[#FEF6F3] px-4 py-3 shadow-sm">
+    <header className="bg-[#FEF6F3] px-4 py-0 shadow-sm" style={{ minHeight: '90px' }}>
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
         {/* Logo */}
         <div className="flex-shrink-0 min-w-[100px] sm:min-w-[120px]">
@@ -73,7 +73,7 @@ export default function Header() {
             aria-label="Toggle menu"
             className="text-2xl"
           >
-            {isMenuOpen ? <IoCloseOutline /> : <HiMenu />}
+            {isMenuOpen ? <IoCloseOutline size={54} /> : <HiMenu size={54} />}
           </button>
         </div>
       </div>
