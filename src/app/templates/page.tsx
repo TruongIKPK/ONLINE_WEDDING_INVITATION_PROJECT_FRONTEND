@@ -64,27 +64,25 @@ export default function TemplatePage() {
           </div>
 
           {/* Danh sách templates */}
-          <div className="flex w-full gap-6 flex-1 overflow-hidden mt-5">
-            <div className="w-1/5">
+          <div className="flex w-full gap-2 flex-1 overflow-hidden mt-5">
+            <div>
               <Sidebar />
             </div>
 
-            {/* Container có scroll và giới hạn 2 dòng */}
             <div
               className="flex-1 overflow-y-auto pr-2"
               style={{
-                scrollbarWidth: 'none', // Firefox
-                msOverflowStyle: 'none', // IE 10+
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none',
               }}
             >
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-h-[700px] overflow-y-auto"
                 style={{
-                  scrollbarWidth: 'none', // Firefox
-                  msOverflowStyle: 'none', // IE
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
                 }}
               >
-                {/* Webkit (Chrome, Safari) scrollbar hidden */}
                 <div
                   style={{
                     display: 'none',
@@ -100,7 +98,6 @@ export default function TemplatePage() {
           </div>
         </div>
       </main>
-
       <Footer />
     </div>
   );
