@@ -99,8 +99,8 @@ const BUTTON_STYLES: ButtonVariants = {
 
         click: {
             text: 'var(--color-primary-dark)',
-            background: 'var(--color-gray)',
-            border: 'var(--color-primary-dark)',
+            background: 'transparent',
+            border: 'transparent',
             fontWeight: "lighter",
         },
     }
@@ -141,9 +141,14 @@ type Props = {
     disabled?: boolean;
     children: React.ReactNode;
     onClick?: () => void;
+    overrideColor?: {
+        text?: string;
+        border?: string;
+        background?: string;
+    };
 };
 
-const Button = ({ type, variantMode, className = "", size = "medium", style: overrideStyle, disabled = false, children, onClick }: Props) => {
+const Button = ({ type, variantMode, className = "", size = "medium", style: overrideStyle, disabled = false, children, onClick, overrideColor }: Props) => {
     const [state, setState] = useState<"default" | "hover" | "click">("default");
 
     const getCurrentVariant = (): string => {
@@ -183,8 +188,9 @@ const Button = ({ type, variantMode, className = "", size = "medium", style: ove
 
     const buttonStyle: React.CSSProperties = {
         ...sizeStyle,
-        color: style.text,
-        borderColor: style.border,
+        color: state === "default" ? (overrideColor?.text || style.text) : style.text,
+        borderColor: state === "default" ? (overrideColor?.border || style.border) : style.border,
+        background: state === "default" ? (overrideColor?.background || style.background || "transparent") : style.background || "transparent",
         textDecoration: style.textDecoration,
         fontWeight: style.fontWeight,
         borderStyle: "solid",
@@ -211,7 +217,9 @@ const Button = ({ type, variantMode, className = "", size = "medium", style: ove
             style={buttonStyle}
             className={className}
         >
-            {children}
+            <div className="flex flex-col items-center justify-center gap-1">
+                {children}
+            </div>
         </button>
     );
 };
