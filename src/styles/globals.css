@@ -12,6 +12,10 @@
   --color-bg-secondary: #ffedd8; /* Peach Fuzz - hover, modal */
   --color-gray: #a3a3a3; /* Grey - shadow, thay thế espresso */
 
+  /* Shadow */
+  --shadow-top:
+    0 -4px 8px -1px rgba(163, 163, 163, 0.25), 0 -2px 6px -1px rgba(163, 163, 163, 0.15);
+
   /* Breakpoint */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;

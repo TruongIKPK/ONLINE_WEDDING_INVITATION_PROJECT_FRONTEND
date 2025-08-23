@@ -1,7 +1,8 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight, User } from "lucide-react";
-import Image from "next/image";
-import clsx from "clsx";
+'use client';
+import { useState } from 'react';
+import { ChevronLeft, ChevronRight, User } from 'lucide-react';
+import Image from 'next/image';
+import clsx from 'clsx';
 
 type Props = {
   title: string;
@@ -12,14 +13,7 @@ type Props = {
   imageUrl: string;
 };
 
-export default function TemplateCard({
-  title,
-  subtitle,
-  name,
-  price,
-  category,
-  imageUrl,
-}: Props) {
+export default function TemplateCard({ title, subtitle, name, price, category, imageUrl }: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -27,10 +21,8 @@ export default function TemplateCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={clsx(
-        "w-[400px] h-[300px] rounded-2xl border p-4 flex flex-col justify-between transition-all duration-300",
-        hovered
-          ? "border-[#E53E3E] bg-[#FFF4F2]"
-          : "border-neutral-400 bg-[#FFF9F7]"
+        'w-[400px] h-[300px] rounded-2xl border p-4 flex flex-col justify-between transition-all duration-300',
+        hovered ? 'border-[#E53E3E] bg-[#FFF4F2]' : 'border-neutral-400 bg-[#FFF9F7]',
       )}
     >
       {/* Top content */}
@@ -42,13 +34,7 @@ export default function TemplateCard({
         </div>
 
         {/* Image */}
-        <Image
-          src={imageUrl}
-          alt="preview"
-          width={120}
-          height={120}
-          className="object-contain"
-        />
+        <Image src={imageUrl} alt="preview" width={120} height={120} className="object-contain" />
 
         {/* Arrows */}
         {hovered && (
@@ -71,10 +57,8 @@ export default function TemplateCard({
 
         <button
           className={clsx(
-            "rounded-lg px-4 py-1 text-sm transition-all duration-200",
-            hovered
-              ? "bg-[#FCE7E7] text-[#221B1B]"
-              : "bg-[#D6D6D6] text-[#221B1B]"
+            'rounded-lg px-4 py-1 text-sm transition-all duration-200',
+            hovered ? 'bg-[#FCE7E7] text-[#221B1B]' : 'bg-[#D6D6D6] text-[#221B1B]',
           )}
         >
           {category}
