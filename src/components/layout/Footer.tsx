@@ -22,8 +22,8 @@ export default function Footer() {
             className="object-contain"
           />
           <p className="text-sm text-gray-500 mt-2">
-            Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
-            consequat.
+            Nơi tạo và in ấn thiệp cưới trực tuyến nhanh chóng, tiện lợi với mẫu mã đa dạng và chất
+            lượng cao.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* Socials - now integrated with other columns */}
           <div className="min-w-[180px]">
-            <h4 className="font-semibold mb-3">Connect with us</h4>
+            <h4 className="font-semibold mb-3">Kết nối với chúng tôi</h4>
             <div className="flex gap-4 text-2xl">
               <Link href="#" target="_blank">
                 <FaFacebook className="hover:scale-110 cursor-pointer text-[#1877F2]" />
