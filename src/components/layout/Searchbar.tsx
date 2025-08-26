@@ -15,7 +15,7 @@ export default function SearchBar() {
       <Search className={`w-5 h-5 mr-3 ${isFocused ? 'text-black' : 'text-gray-400'}`} />
       <input
         type="text"
-        placeholder="Search bar"
+        placeholder="Tìm kiếm..."
         className={`w-full bg-transparent outline-none text-base transition-all ${
           isFocused ? 'text-black font-medium' : 'text-gray-400'
         }`}

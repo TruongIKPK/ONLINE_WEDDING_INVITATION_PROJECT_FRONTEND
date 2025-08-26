@@ -59,10 +59,10 @@ export default function Header() {
             Liên hệ
           </a>
           <a href="#" className="text-black !no-underline hover:!text-red-500">
-            Sign up
+            Đăng ký
           </a>
           <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
-            Login
+            Đăng nhập
           </a>
         </nav>
 
@@ -100,10 +100,10 @@ export default function Header() {
               Liên hệ
             </a>
             <a href="#" className="text-black !no-underline hover:!text-red-500">
-              Sign up
+              Đăng ký
             </a>
             <a href="#" className="text-black !no-underline hover:!text-red-500 font-medium">
-              Login
+              Đăng nhập
             </a>
           </div>
         </div>
