@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight, User } from 'lucide-react';
 import Image from 'next/image';
 import clsx from 'clsx';
+
 import Link from 'next/link';
 
 type Props = {
@@ -12,9 +13,18 @@ type Props = {
   price: number;
   category: string;
   imageUrl: string;
+  featured?: boolean;
 };
 
-export default function TemplateCard({ title, subtitle, name, price, category, imageUrl }: Props) {
+export default function TemplateCard({
+  title,
+  subtitle,
+  name,
+  price,
+  category,
+  imageUrl,
+  featured,
+}: Props) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -22,7 +32,8 @@ export default function TemplateCard({ title, subtitle, name, price, category, i
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={clsx(
-        'w-[400px] h-[300px] rounded-2xl border p-4 flex flex-col justify-between transition-all duration-300',
+        featured ? 'w-[600px] h-[400px]' : 'w-[400px] h-[300px]',
+        'rounded-2xl border p-4 flex flex-col justify-between transition-all duration-300',
         hovered ? 'border-[#E53E3E] bg-[#FFF4F2]' : 'border-neutral-400 bg-[#FFF9F7]',
       )}
     >

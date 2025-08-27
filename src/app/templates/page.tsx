@@ -1,9 +1,8 @@
 // app/page.tsx
 import React from 'react';
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
 import Sidebar from './components/Sidebar';
 import TemplateCard from '@/components/ui/Card';
+import SearchBar from '@/components/layout/Searchbar';
 
 const mainCard = {
   title: 'Fireworks Infographics',
@@ -26,14 +25,12 @@ const cards = Array.from({ length: 20 }).map((_, index) => ({
 export default function TemplatePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fdf5f3]">
-      <Navbar />
-
       <main className="flex-1 flex gap-6 w-full overflow-hidden">
         <div className="flex-1 flex flex-col overflow-hidden">
           {/* Banner chính */}
           <div className="flex justify-center mb-10 mx-auto">
-            <div className="w-full max-w-4xl pt-5">
-              <TemplateCard {...mainCard} />
+            <div className="pt-5 w-full max-w-6xl">
+              <TemplateCard {...mainCard} featured />
             </div>
           </div>
 
@@ -49,26 +46,15 @@ export default function TemplatePage() {
               <select className="border rounded-xl px-3 py-2 text-sm">
                 <option>Kích thước</option>
               </select>
-              <select className="border rounded-xl px-3 py-2 text-sm">
-                <option>Select</option>
-              </select>
-              <select className="border rounded-xl px-3 py-2 text-sm">
-                <option>Select</option>
-              </select>
             </div>
-            <input
-              type="text"
-              placeholder="Search bar"
-              className="border rounded-xl px-3 py-2 text-sm mt-3 md:mt-0 w-full md:w-90"
-            />
+            <div className="w-[500]">
+              <SearchBar />
+            </div>
           </div>
 
           {/* Danh sách templates */}
           <div className="flex w-full gap-2 flex-1 overflow-hidden mt-5">
-            <div>
-              <Sidebar />
-            </div>
-
+            <Sidebar />
             <div
               className="flex-1 overflow-y-auto pr-2"
               style={{
@@ -98,7 +84,6 @@ export default function TemplatePage() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
