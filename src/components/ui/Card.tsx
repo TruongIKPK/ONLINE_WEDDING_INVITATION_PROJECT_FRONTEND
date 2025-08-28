@@ -32,7 +32,9 @@ export default function TemplateCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={clsx(
-        featured ? 'w-[600px] h-[400px]' : 'w-[400px] h-[300px]',
+        featured
+          ? 'w-full xl:w-[700px] xl:h-[400px] lg:w-[700px] lg:h-[400px] md:w-[700px] md:h-[400px] sm:w-[600px] sm:h-[400px] '
+          : 'w-full xl:w-[350px] xl:h-[250px] lg:w-[250px] lg:h-[180px] md:w-[270px] md:h-[200px] sm:w-[300px] sm:h-[200px]',
         'rounded-2xl border p-4 flex flex-col justify-between transition-all duration-300',
         hovered ? 'border-[#E53E3E] bg-[#FFF4F2]' : 'border-neutral-400 bg-[#FFF9F7]',
       )}
