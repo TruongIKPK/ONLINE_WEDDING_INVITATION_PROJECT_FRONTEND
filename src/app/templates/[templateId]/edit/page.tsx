@@ -721,6 +721,11 @@ export default function EditorPage() {
   const saveAsImage = () => {
     if (!fabricCanvas.current) return;
     const dataURL = fabricCanvas.current.toCanvasElement().toDataURL("image/png");
+    console.log("Dữ liệu canvas khi tải xuống:", {
+      canvas: fabricCanvas.current.toJSON(),
+      uploadedImages,
+      imageDataURL: dataURL,
+    });
     const link = document.createElement("a");
     link.href = dataURL;
     link.download = "wedding-card.png";
@@ -1057,7 +1062,7 @@ export default function EditorPage() {
 
   return (
     <div className="flex flex-col h-screen overflow-hidden bg-[var(--color-bg-main)]">
-      <div className="flex items-center justify-between border-b px-4 py-3">
+      <div className="flex items-center justify-between border-b px-4 py-[13px]">
         <div className="text-sm text-[var(--color-gray)] pl-9">Zoom: {Math.round(zoom * 100)}%</div>
         <div className="flex items-center gap-2">
           <Button type="ghost" >Lưu thiệp</Button>
@@ -1077,12 +1082,16 @@ export default function EditorPage() {
         <div className="w-[256px] h-full overflow-y-auto hide-scrollbar border-r p-4 flex flex-col font-bold">
           <div className="space-y-2">
             <div>
-              <div className="text-sm mb-2" style={{ color: "var(--color-gray)" }}>ACTIONS</div>
+              <div className="text-sm mb-2" style={{ color: "var(--color-gray)" }}>THAO TÁC</div>
               <div className="space-y-2">
                 <div className="flex gap-2">
                   <Button
                     type="primary"
-                    overrideColor={{ text: "var(--color-gray)", border: "var(--color-gray)" }}
+                    overrideColor={
+                      history.length <= 1
+                        ? { text: "var(--color-gray)", border: "var(--color-gray)" }
+                        : { text: "var(--color-primary)", border: "var(--color-primary)" }
+                    }
                     onClick={handleUndo}
                     disabled={history.length <= 1}
                     className="flex-1 h-[66px] px-[40px] py-[13px]"
@@ -1092,7 +1101,11 @@ export default function EditorPage() {
                   </Button>
                   <Button
                     type="primary"
-                    overrideColor={{ text: "var(--color-gray)", border: "var(--color-gray)" }}
+                    overrideColor={
+                      redoStack.length === 0
+                        ? { text: "var(--color-gray)", border: "var(--color-gray)" }
+                        : { text: "var(--color-primary)", border: "var(--color-primary)" }
+                    }
                     onClick={handleRedo}
                     disabled={redoStack.length === 0}
                     className="flex-1 h-[66px] px-[40px] py-[13px]"
@@ -1109,7 +1122,7 @@ export default function EditorPage() {
                     className="flex-1 h-[66px] px-[40px] py-[13px]"
                     style={{ boxShadow: "none" }}
                   >
-                    <LuImage size={20} /> Image
+                    <LuImage size={20} /> Hình ảnh
                   </Button>
                   <Button
                     type="primary"
@@ -1118,7 +1131,7 @@ export default function EditorPage() {
                     className="flex-1 h-[66px] px-[40px] py-[13px]"
                     style={{ boxShadow: "none" }}
                   >
-                    <RxText size={20} /> Text
+                    <RxText size={20} /> Văn bản
                   </Button>
                 </div>
                 <div className="flex gap-2">
@@ -1129,7 +1142,7 @@ export default function EditorPage() {
                     className="flex-1 h-[66px] px-[40px] py-[13px]"
                     style={{ boxShadow: "none" }}
                   >
-                    <LuTrash2 size={20} /> Clear
+                    <LuTrash2 size={20} /> Xóa trắng
                   </Button>
                   <div className="flex-1 p-3" />
                 </div>
@@ -1139,7 +1152,7 @@ export default function EditorPage() {
             <div>
               <div className="text-sm mt-6 mb-2" style={{ color: "var(--color-gray)" }}>QUẢN LÝ</div>
               <Button type="primary" overrideColor={{ text: "var(--color-primary-dark)", border: "var(--color-primary-dark)" }} className="w-full h-[66px] !font-medium">
-                <LuSave size={20} /> QL khách mời
+                <LuSave size={20} /> Quản lý khách mời
               </Button>
               <Button type="primary" overrideColor={{ text: "var(--color-primary-dark)", border: "var(--color-primary-dark)" }} className="w-full h-[66px] !font-medium mt-5" onClick={saveAsImage}>
                 <LuDownload size={20} /> Tải xuống
